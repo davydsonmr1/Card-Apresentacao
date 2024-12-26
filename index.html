@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davydson Maciel - Fullstack JS Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body data-theme="dark">
+  <div class="background"></div>
+  <div class="card">
+    <div class="border-animation">
+      <img src="assets/Captura de tela 2024-12-26 183515.png" alt="Foto de perfil" class="profile-pic">
+    </div>
+    <h1 id="name">Davydson Maciel Rafael</h1>
+    <p class="job-title" id="job">Desenvolvedor Web</p>
+    <p class="description" id="description">
+      Sou apaixonado por tecnologia e criação de soluções inovadoras. Vamos construir algo incrível juntos!
+    </p>
+    <div class="contatos">
+      <a href="https://github.com/davydsonmr1" class="github" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/davydsonmaciel/" class="linkedin" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/davydsonmaciel/" class="instagram" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/5532998253348" class="whatsapp" target="_blank" aria-label="WhatsApp" onclick="return confirm('Deseja mesmo abrir o WhatsApp?')">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <div class="actions">
+      <button class="download-btn" target="_blank" onclick="downloadCV()">Baixar CV</button>
+      <button class="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+    </div>
+  </div>
+
+  <script>
+    function downloadCV() {
+      const link = document.createElement('a');
+      link.href  = 'https://docs.google.com/document/d/1rKevtl_qDNBohIuJY3B2MH5bp5OHSybV/edit?usp=sharing&ouid=118114397264608884078&rtpof=true&sd=true'; 
+      link.download = 'https://docs.google.com/document/d/1rKevtl_qDNBohIuJY3B2MH5bp5OHSybV/edit?usp=sharing&ouid=118114397264608884078&rtpof=true&sd=true';
+      link.click();
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+    }
+
+    function createFallingChars() {
+      const background = document.querySelector('.background');
+      const chars = '01';
+
+      for (let i = 0; i < 1000; i++) {
+        const span = document.createElement('span');
+        span.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+        span.style.left = `${Math.random() * 100}vw`;
+        span.style.animationDuration = `${Math.random() * 7 + 1}s`;
+        span.style.animationDelay = `${Math.random() * 5}s`;
+        background.appendChild(span);
+      }
+    }
+
+    createFallingChars();
+  </script>
+</body>
+</html>

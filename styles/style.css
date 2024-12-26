@@ -1,0 +1,176 @@
+:root {
+    --color-primary: #f4f4f9;
+    --color-secondary: #333;
+    --color-highlight: #0a66c2;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-active-shadow: rgba(0, 0, 0, 0.2);
+    --color-light-bg: #121212;
+    --color-light-text: #f4f4f9;
+  }
+  
+  [data-theme="light"] {
+    --color-primary: var(--color-light-bg);
+    --color-secondary: var(--color-light-text);
+
+    h1 {
+
+      color: #121212;
+
+    }
+
+    p {
+        color: #121212;
+    }
+
+    
+
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .background span {
+    position: absolute;
+    color: lime;
+    font-family: monospace;
+    font-size: 20px;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
+  
+  .profile-pic {
+    box-shadow: 3 2px 4px black;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .card {
+    background: var(--color-secondary);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+  }
+  
+  .card:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px var(--color-active-shadow);
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #f4f4f9;
+  }
+  
+  .job-title {
+    font-size: 1rem;
+    margin: 5px 0 10px;
+    color: #fcfbfb;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .contatos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  
+  .contatos a {
+    text-decoration: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease, filter 0.3s;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 4px var(--color-shadow);
+  }
+  
+  .contatos a:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .contatos .github {
+    background-color: #858484;
+  }
+  
+  .contatos .linkedin {
+    background-color: var(--color-highlight);
+  }
+  
+  .contatos .instagram {
+    background-color: #e4405f;
+  }
+  
+  .contatos .whatsapp {
+    background-color: #25d366;
+  }
+  
+  .actions {
+    margin-top: 20px;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .actions .download-btn {
+    background-color: rgb(17, 80, 17);
+    color: white;
+  }
+  
+  .actions .theme-toggle {
+    background-color: #555;
+    color: white;
+  }
+  
